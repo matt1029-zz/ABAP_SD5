@@ -1,0 +1,6 @@
+@EndUserText.label: 'Shopping Cart DCL'
+@MappingRole: true
+define role ZI_I310752_SC_ROOT {
+    grant  select on ZI_I310752_SC_ROOT
+    where ( document_type )  = aspect pfcg_auth( ZS4IBSO002, ZS4IBSDOCT, actvt = '03' );
+}
