@@ -29,5 +29,7 @@ association [0..*] to ZI_I310752_SC_ITEM_TP as _Item on _Item.parent_key = $proj
   waers,
   /* Associations */
   @ObjectModel.association.type: #TO_COMPOSITION_CHILD
-  _Item  
+  _Item,
+  _DocTypeVH,
+  _CurrencyVH 
 }

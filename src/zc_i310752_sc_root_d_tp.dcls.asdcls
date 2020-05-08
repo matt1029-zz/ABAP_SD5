@@ -1,0 +1,6 @@
+@EndUserText.label: 'Shopping Cart Item TP Consumption DCL'
+@MappingRole: true
+define role ZC_I310752_SC_ROOT_D_TP {
+    grant select on ZC_I310752_SC_ROOT_D_TP inherit ZI_I310752_SC_ROOT_D_TP;
+                        
+}

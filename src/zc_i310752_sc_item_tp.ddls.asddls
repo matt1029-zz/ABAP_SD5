@@ -15,7 +15,7 @@
   typeNamePlural: 'Shopping Cart Items',
   title: { label: 'Items', value: 'scart_items' }
 }
-//@Search.searchable: true
+@Search.searchable: true
 
 define view ZC_I310752_SC_ITEM_TP as select from ZI_I310752_SC_ITEM_TP 
 association [1..1] to ZC_I310752_SC_ROOT_TP as _Root on _Root.db_key = $projection.parent_key
@@ -46,6 +46,7 @@ association [1..1] to ZC_I310752_SC_ROOT_TP as _Root on _Root.db_key = $projecti
       @UI.lineItem.position: 30
       @UI.identification.position: 30
       @Search.defaultSearchElement: true   
+      @ObjectModel.text.element: 'txz01'
        matnr,
       @UI.lineItem.position: 40
       @UI.identification.position: 40
@@ -65,6 +66,6 @@ association [1..1] to ZC_I310752_SC_ROOT_TP as _Root on _Root.db_key = $projecti
       @UI.identification.position: 100    
     lifnr,
     /* Associations */
-    @ObjectModel.association.type:[#TO_AGGREGATION_PARENT,#TO_COMPOSITION_ROOT]
+    @ObjectModel.association.type:[#TO_COMPOSITION_PARENT,#TO_COMPOSITION_ROOT]
     _Root
 }

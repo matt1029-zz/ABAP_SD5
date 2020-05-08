@@ -1,0 +1,76 @@
+@Metadata.layer: #CORE
+annotate view ZC_I310752_SC_ROOT_D_TP with
+{
+  @UI.facet: [
+  { label: 'General Information' ,
+    id: 'GeneralInformation',
+    type: #COLLECTION,
+    position: 10
+
+   },
+   { label: 'Basic Data' ,
+    id: 'BasicData',
+    parentId: 'GeneralInformation',
+    type: #FIELDGROUP_REFERENCE,
+    position: 10,
+     targetQualifier: 'BasicData'
+   },
+   { label: 'Admin Data' ,
+    id: 'AdminData',
+    parentId: 'GeneralInformation',
+    type: #FIELDGROUP_REFERENCE,
+    position: 20,
+   targetQualifier: 'AdminData'
+   },
+
+   { label: 'Items' ,
+    id: 'Items',
+    type: #LINEITEM_REFERENCE,
+    position: 20,
+    targetElement: '_Items'
+   }
+   ]
+  @UI.hidden: true
+  db_key;
+  @UI.identification:[{position: 10}]
+  @UI.selectionField:[{position: 10}]
+  @UI.lineItem:[{position: 10}]
+  @UI.fieldGroup: [{position: 10, qualifier: 'BasicData'}]
+  cart_id;
+  @UI.identification:[{position: 20}]
+  @UI.selectionField:[{position: 20}]
+  @UI.lineItem:[{position: 20}]
+  @UI.fieldGroup: [{position: 20, qualifier: 'BasicData'}]
+  @Consumption.valueHelpDefinition: [{ entity: { name : 'ZI_I310752_DD07L', element : 'document_type' } }]
+  document_type;
+  @UI.identification:[{position: 30}]
+  @UI.lineItem:[{position: 30}]
+  @UI.fieldGroup: [{position: 30, qualifier: 'BasicData'}]
+  curr_max_itm_no;
+  @UI.identification:[{position: 40}]
+  @UI.lineItem:[{position: 40}]
+  @UI.fieldGroup: [{position: 40, qualifier: 'BasicData'}]
+  itm_count;
+  @UI.identification:[{position: 50}]
+  @UI.lineItem:[{position: 50}]
+  @UI.fieldGroup: [{position: 10, qualifier: 'AdminData'}]
+  crea_date_time;
+  @UI.identification:[{position: 60}]
+  @UI.lineItem:[{position: 60}]
+  @UI.fieldGroup: [{position: 20, qualifier: 'AdminData'}]
+  crea_uname;
+  @UI.identification:[{position: 70}]
+  @UI.lineItem:[{position: 70}]
+  @UI.fieldGroup: [{position: 30, qualifier: 'AdminData'}]
+  lchg_date_time;
+  @UI.identification:[{position: 80}]
+  @UI.lineItem:[{position: 80}]
+  @UI.fieldGroup: [{position: 40, qualifier: 'AdminData'}]
+  lchg_uname;
+  @UI.lineItem:[{position: 90}]
+  @UI.fieldGroup: [{position: 50, qualifier: 'BasicData'}]
+  total_val_net;
+  @UI.identification:[{position: 90}]
+  @Consumption.valueHelpDefinition: [{ entity: { name : 'I_CurrencyStdVH', element : 'waers' } }]
+  waers;
+}
